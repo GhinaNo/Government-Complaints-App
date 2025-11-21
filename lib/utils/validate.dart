@@ -2,28 +2,28 @@ import 'package:flutter/material.dart';
 
 class Validate {
   static String? validateEmail(String? value) {
-    if (value == null || value.isEmpty) return 'Enter email';
+    if (value == null || value.isEmpty) return 'أدخل البريد الإلكتروني';
     if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)) {
-      return 'Invalid email';
+      return 'بريد إلكتروني غير صحيح';
     }
     return null;
   }
 
   static String? validateName(String? value) {
     if (value == null || value.isEmpty || value.length < 2) {
-      return 'Enter valid name';
+      return 'أدخل اسم صحيح';
     }
     return null;
   }
 
   static String? validatePhoneNumber(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Enter phone number';
+      return 'أدخل رقم الهاتف';
     }
 
     final phoneRegex = RegExp(r'^[0-9]{10,15}$');
     if (!phoneRegex.hasMatch(value)) {
-      return 'Enter a valid phone number (10-15 digits)';
+      return 'أدخل رقم هاتف صحيح (10-15 رقم)';
     }
 
     return null;
@@ -31,7 +31,7 @@ class Validate {
 
   static String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Enter password';
+      return 'أدخل كلمة المرور';
     }
 
     final hasUpperCase = RegExp(r'[A-Z]').hasMatch(value);
@@ -40,18 +40,18 @@ class Validate {
     final hasSpecialChar = RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(value);
     final hasMinLength = value.length >= 8;
 
-    if (!hasMinLength) return 'Password must be at least 8 characters';
-    if (!hasUpperCase) return 'Include at least one uppercase letter';
-    if (!hasLowerCase) return 'Include at least one lowercase letter';
-    if (!hasNumber) return 'Include at least one number';
-    if (!hasSpecialChar) return 'Include at least one special character';
+    if (!hasMinLength) return 'كلمة المرور يجب أن تكون 8 أحرف على الأقل';
+    if (!hasUpperCase) return 'أضف حرف كبير واحد على الأقل';
+    if (!hasLowerCase) return 'أضف حرف صغير واحد على الأقل';
+    if (!hasNumber) return 'أضف رقم واحد على الأقل';
+    if (!hasSpecialChar) return 'أضف رمز خاص واحد على الأقل';
 
     return null;
   }
 
   static String? validateLoginPassword(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Enter password';
+      return 'أدخل كلمة المرور';
     }
     return null;
   }
@@ -60,7 +60,7 @@ class Validate {
       String? value,
       TextEditingController passCtrl,
       ) {
-    if (value != passCtrl.text) return 'Passwords do not match';
+    if (value != passCtrl.text) return 'كلمات المرور غير متطابقة';
     return null;
   }
 

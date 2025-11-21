@@ -7,20 +7,24 @@ class GoldTextField extends StatelessWidget {
     required this.hint,
     this.obscure = false,
     this.keyboard = TextInputType.text,
+    this.textInputAction = TextInputAction.next,
     this.prefixIcon,
     this.suffixIcon,
     required this.validator,
     this.strengthColor,
+    this.autofocus = false,
   });
 
   final TextEditingController controller;
   final String hint;
   final bool obscure;
   final TextInputType keyboard;
+  final TextInputAction textInputAction;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final String? Function(String? value) validator;
   final Color? strengthColor;
+  final bool autofocus;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +38,9 @@ class GoldTextField extends StatelessWidget {
       obscureText: obscure,
       validator: validator,
       keyboardType: keyboard,
+      textInputAction: textInputAction,
+      autofocus: autofocus,
+      textAlign: TextAlign.right,
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         hintText: hint,

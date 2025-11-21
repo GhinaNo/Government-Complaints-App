@@ -33,7 +33,7 @@ class PasswordRequirements extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         const Text(
-          'Password must contain:',
+          'يجب أن تحتوي كلمة المرور على:',
           style: TextStyle(
             color: Colors.white70,
             fontSize: 14,
@@ -41,11 +41,11 @@ class PasswordRequirements extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 8),
-        _buildRequirementItem('At least 8 characters', requirements['8_characters']!),
-        _buildRequirementItem('One uppercase letter (A-Z)', requirements['uppercase']!),
-        _buildRequirementItem('One lowercase letter (a-z)', requirements['lowercase']!),
-        _buildRequirementItem('One number (0-9)', requirements['number']!),
-        _buildRequirementItem('One special character (!@#\$...)', requirements['special_char']!),
+        _buildRequirementItem(' أحرف على الأقل 8', requirements['8_characters']!),
+        _buildRequirementItem('حرف كبير واحد على الأقل (A-Z)', requirements['uppercase']!),
+        _buildRequirementItem('حرف صغير واحد على الأقل (a-z)', requirements['lowercase']!),
+        _buildRequirementItem('رقم واحد على الأقل(0-9)', requirements['number']!),
+        _buildRequirementItem('رمز خاص واحد على الأقل (!@#\$...)', requirements['special_char']!),
       ],
     );
   }
@@ -79,14 +79,14 @@ class PasswordRequirements extends StatelessWidget {
   String _getStrengthText(int metCount) {
     switch (metCount) {
       case 5:
-        return 'Strong Password ✓';
+        return 'كلمة مرور قوية ✓';
       case 4:
       case 3:
-        return 'Medium Password';
+        return 'كلمة مرور متوسطة';
       case 2:
-        return 'Weak Password';
+        return 'كلمة مرور ضعيفة';
       default:
-        return 'Very Weak Password';
+        return 'كلمة مرور ضعيفة جداً';
     }
   }
 }
